@@ -88,9 +88,9 @@
     <div class="myContainer">
         <div class="row" style="min-height: 600px">
             <!--En pantallas medias o superiores-->
-	     <%= form_for @product, url: {action: "home_serigraphy"} do |f| %>
+            <%= form_for @product, url: {action: "upload_to_cart"} do |f| %>
 
-		<%= f.fields_for :serigraphy, Serigraphy.new do |se| %>
+                <%= f.fields_for :shirt,Shirt.new do |s| %>
                 
             <!--<form action="#">-->
                 
@@ -104,118 +104,64 @@
                         <div class="col l3 m3 vertical-align">
                             <p class="prev-colors">COLOR CAMISETA</p>
                             <div class="row prev-colors">
-                                <div class="col l1 m1 s1 choose-color-1">
+                                <div class="col l2 m2 s2 choose-color-1">
                                     <p>
-					<%= se.check_box :color,{:id => "purple",:name => "groupColorShirt"},"purple"%>
+                                        <%= radio_button :shirt,:color,:white,:checked=>true,:class =>'with-gap'%>
+                                        <label for="shirt_color_white">Blanco</label>
+                                        
+                                    </p>
+                                    <p>
+					               
+                                    <%= radio_button :shirt,:color,:purple ,:class =>'with-gap'%>
+                                        <label for="shirt_color_purple">Morado</label>
+                                    </p>
+                                
+                               
+                                    <p>
+                                        <%= radio_button :shirt,:color,:blue,:class =>'with-gap'%>
+                                        <label for="shirt_color_blue">Azul</label>
+                                    </p>
+                               
+                                    <p>
+                                        <%= radio_button :shirt,:color,:yellow,:class =>'with-gap'%>
+                                        <label for="shirt_color_yellow">Amarillo</label>
+                                    </p>
+                                
+                                    <p>
+					               <%= radio_button :shirt,:color,:orange,:class =>'with-gap'%>
+                                        <label for="shirt_color_orange">Naranja</label>
+                                    </p>
+                                
                                     
-                                        <label for="purple"></label>
-                                    </p>
-                                </div>
-                                <div class="col l1 m1 s1 choose-color-2">
-                                    <p>
-                                        <%= se.check_box :color,{:id => "blue",:name => "groupColorShirt"},"blue"%>
-                                        <label for="blue"></label>
-                                    </p>
-                                </div>
-                                <div class="col l1 m1 s1 choose-color-3">
-                                    <p>
-                                        <%= se.check_box :color,{:id => "yellow",:name => "groupColorShirt"},"yellow"%>
-                                        <label for="yellow"></label>
-                                    </p>
-                                </div>
-                                <div class="col l1 m1 s1 choose-color-4">
-                                    <p>
-					<%= se.check_box :color,{:id => "orange",:name => "groupColorShirt"},"orange"%>
-                                        <label for="orange"></label>
-                                    </p>
-                                </div>
-                                <div class="col l1 m1 s1 choose-color-5">
-                                    <p>
-                                        <input name="groupColorShirt" type="checkbox" id="red" value="red">
-                                        <label for="red"></label>
-                                    </p>
-                                </div>
-                                <div class="col l1 m1 s1 choose-color-6">
-                                    <p>
-                                        <%= se.check_box :color,{:id => "green",:name => "groupColorShirt"},"green"%>
-                                        <label for="green"></label>
-                                    </p>
-                                </div>
-                                <div class="col l1 m1 s1 choose-color-7">
-                                    <p>
-                                         <%= se.check_box :color,{:id => "aqua",:name => "groupColorShirt"},"aqua"%>
-                                        <label for="aqua"></label>
-                                    </p>
                                 </div>
                             </div>
-                            <div class="row prev-colors">
-                                <div class="col l1 m1 s1 choose-color-8">
-                                    <p>
-                                         <%= se.check_box :color,{:id => "black",:name => "groupColorShirt"},"black"%>
-                                        <label for="black"></label>
-                                    </p>
-                                </div>
-                                <div class="col l1 m1 s1 choose-color-9">
-                                    <p>
-                                         <%= se.check_box :color,{:id => "white",:name => "groupColorShirt"},"white"%>
-                                        <label for="white"></label>
-                                    </p>
-                                </div>
-                                <div class="col l1 m1 s1 choose-color-10">
-                                    <p>
-                                         <%= se.check_box :color,{:id => "grey",:name => "groupColorShirt"},"grey"%>
-                                        <label for="grey"></label>
-                                    </p>
-                                </div>
-                                <div class="col l1 m1 s1 choose-color-11">
-                                    <p>
-                                        <%= se.check_box :color,{:id => "pink",:name => "groupColorShirt"},"pink"%>
-                                        <label for="pink"></label>
-                                    </p>
-                                </div>
-                                <div class="col l1 m1 s1 choose-color-12">
-                                    <p>
-                                         <%= se.check_box :color,{:id => "brown",:name => "groupColorShirt"},"brown"%>
-                                        <label for="brown"></label>
-                                    </p>
-                                </div>
-                                <div class="col l1 m1 s1 choose-color-13">
-                                    <p>
-                                         <%= se.check_box :color,{:id => "violet",:name => "groupColorShirt"},"violet"%>
-                                        <label for="violet"></label>
-                                    </p>
-                                </div>
-                                <div class="col l1 m1 s1 choose-color-14">
-                                    <p>
-                                         <%= se.check_box :color,{:id => "deepskyblue",:name => "groupColorShirt"},"deepskyblue"%>
-                                        <label for="deepskyblue"></label>
-                                    </p>
-                                </div>
-                            </div>
+                            
                         </div>
-			<%= f.fields_for :shirt,Shirt.new do |s| %>
+			
                         <div class="col l3 m3 vertical-align">
                             <div class="row no-margin-bottom">
-                                <div class="col l6 l6 s6"><p>HOMBRE</p></div>
+                                
                                 <div class="col l6 s6">
                                     <p>
-                                         <%= s.check_box :type,{:id => "hombre",:name => "groupType"},"hombre"%>
-                                        <label for="hombre"></label>
+                                        
+                                        <%= radio_button :shirt,:shirt_type,:hombre,:checked=> true,:class =>'with-gap'%>
+                                        <label for="shirt_shirt_type_hombre">Hombre</label>
                                     </p>
                                 </div>
                             </div>
                             <div class="row no-margin-bottom">
-                                <div class="col l6 s6"><p>MUJER</p></div>
+                                
                                 <div class="col l6 s6"><p>
-                                         <%= s.check_box :type,{:id => "mujer",:name => "groupType"},"mujer"%>
-                                       <label for="mujer"></label>
+                                         
+                                        <%= radio_button :shirt,:shirt_type,:mujer,:class =>'with-gap'%>
+                                        <label for="shirt_shirt_type_mujer">Mujer</label>
                                 </p></div>
                             </div>
                             <div class="row no-margin-bottom">
-                                <div class="col l6 s6"><p>NIÑO</p></div>
+                              
                                 <div class="col l6 s6"><p>
-                                      <%= s.check_box :type,{:id => "niño",:name => "groupType"},"niño"%>
-                                    <label for="niño"></label>
+                                       <%= radio_button :shirt,:shirt_type,:ninio,:class =>'with-gap'%>
+                                        <label for="shirt_shirt_type_ninio">Niño</label>
                                 </p></div>
                             </div>
                         </div>
@@ -243,43 +189,44 @@
                     <div class="prev-down">
                         <div class="row">
                             <div class="col l2 m2 s2 offset-l1">
-                                <p>S</p>
+                                
                                 <p>
-                                    <%= s.check_box :size,{:id => "s",:name => "groupSize"},"s"%>
-                                    <label for="s"></label>
+                                    
+                                     <%= radio_button :shirt,:size,:S,:class =>'with-gap'%>
+                                        <label for="shirt_size_S">S</label>
                                 </p>
                             </div>
                             <div class="col l2 m2 s2">
-                                <p>M</p>
+                              
                                 <p>
-                                    <%= s.check_box :size,{:id => "m",:name => "groupSize"},"m"%>
-                                    <label for="m"></label>
+                                    <%= radio_button :shirt,:size,:M,:checked=>true,:class =>'with-gap'%>
+                                        <label for="shirt_size_M">M</label>
                                 </p>
                             </div>
                             <div class="col l2 m2 s2">
-                                <p>L</p>
+                               
                                 <p>
-                                    <%= s.check_box :size,{:id => "l",:name => "groupSize"},"l"%>
-                                    <label for="l"></label>
+                                    <%= radio_button :shirt,:size,:L,:class =>'with-gap'%>
+                                        <label for="shirt_size_L">L</label>
                                 </p>
                             </div>
 				
                             <div class="col l2 m2 s2">
-                                <p>XL</p>
+                               
                                 <p>
-                                    <%= s.check_box :size,{:id => "xl",:name => "groupSize"},"xl"%>
-                                    <label for="xl"></label>
+                                    <%= radio_button :shirt,:size,:XL,:class =>'with-gap'%>
+                                        <label for="shirt_size_XL">XL</label>
                                 </p>
                             </div>
                             <div class="col l2 m2 s2">
-                                <p>XLL</p>
+                               
                                 <p>
-                                    <%= s.check_box :size,{:id => "xxl",:name => "groupSize"},"xxl"%>
-                                    <label for="xxl"></label>
+                                    <%= radio_button :shirt,:size,:XXL,:class =>'with-gap'%>
+                                        <label for="shirt_size_XXL">XXL</label>
                                 </p>
                             </div>
                         </div>
-			<%end%>
+		
                         <div class="row no-margin-bottom">
                             <div class="col l3">
                                 <p>FRENTE</p>
@@ -294,19 +241,22 @@
                                 <canvas id="canvas-back"></canvas>
                                 </div>
                             </div>
-                            <div class="col l6">
+                            
+                            
+                             <div class="col l6">
                                 <p class="location-text frente-with-line">FRENTE</p>
                                 <hr>
                                 <p>
-                                    <%= se.check_box :place,{:id => "frente",:checked => "true"},"front"%>
+                                    <%= f.check_box :place,{:id => "frente"},"front"%>
                                     <label for="frente"></label>
                                 </p>
                             </div>
+
                             <div class="col l6">
                                 <p class="location-text frente-with-line">TRASERA</p>
                                 <hr>
                                 <p>
-                                    <%= se.check_box :place,{:id => "trasera",:checked => "true"},"back"%>
+                                    <%= f.check_box :place,{:id => "trasera"},"back"%>
                                     <label for="trasera"></label>
                                 </p>
                             </div>
@@ -314,11 +264,11 @@
                                 <div class="image-data-div"><p class="location-text">DATOS DE LA IMAGEN</p></div>
                                 <div class="row no-margin-bottom">
                                     <div class="input-field col l6 s6">
-                                        <%= se.text_field :width,{:id => "ancho",:class => "validate"}%>
+                                        <%= f.text_field :width,{:id => "ancho",:class => "validate"}%>
                                         <label for="ancho">ANCHO(EN CM)</label>
                                     </div>
                                     <div class="input-field col l6 s6">
-                                        <%= se.text_field :heigth,{:id => "alto",:class => "validate"}%>
+                                        <%= f.text_field :heigth,{:id => "alto",:class => "validate"}%>
                                         <label for="alto">ALTO(EN CM)</label>
                                     </div>
                                 </div>
@@ -328,38 +278,40 @@
                                     </div>
                                     <div class="col l2 s2">
                                         <p>
-                                            <%= se.check_box :number_of_colors,{:id => "1-color",:name => "groupColorNumb"},"1-color"%>
-                                            <label for="1-color"></label>
+                                            
+                                             <%= radio_button :product,:number_of_colors,:uno,:checked=>true,:class =>'with-gap'%>
+                                        <label for="shirt_number_of_colors_uno">1</label>
                                         </p>
-                                        <p>1</p>
+                                       
                                     </div>
                                     <div class="col l2 s2">
                                         <p>
-                                            <%= se.check_box :number_of_colors,{:id => "2-color",:name => "groupColorNumb"},"2-color"%>
-                                            <label for="2-color"></label>
+                                            
+                                             <%= radio_button :product,:number_of_colors,:dos,:class =>'with-gap'%>
+                                        <label for="shirt_number_of_colors_dos">2</label>
                                         </p>
-                                        <p>2</p>
+                                       
                                     </div>
                                     <div class="col l2 s2">
                                         <p>
-                                            <%= se.check_box :number_of_colors,{:id => "3-color",:name => "groupColorNumb"},"3-color"%>
-                                            <label for="3-color"></label>
+                                             <%= radio_button :product,:number_of_colors,:tres,:class =>'with-gap'%>
+                                        <label for="shirt_number_of_colors_tres">3</label>
                                         </p>
-                                        <p>3</p>
+                                        
                                     </div>
                                     <div class="col l2 s2">
                                         <p>
-                                            <%= se.check_box :number_of_colors,{:id => "4-color",:name => "groupColorNumb"},"4-color"%>
-                                            <label for="4-color"></label>
+                                             <%= radio_button :product,:number_of_colors,:cuatro,:class =>'with-gap'%>
+                                        <label for="shirt_number_of_colors_cuatro">4</label>
                                         </p>
-                                        <p>4</p>
+                                        
                                     </div>
                                     <div class="col l2 s2">
                                         <p>
-                                            <%= se.check_box :number_of_colors,{:id => "5-color",:name => "groupColorNumb"},"5-color"%>
-                                            <label for="5-color"></label>
+                                             <%= radio_button :product,:number_of_colors,:cinco,:class =>'with-gap'%>
+                                        <label for="shirt_number_of_colors_cinco">+ de 4</label>
                                         </p>
-                                        <p>+ de 4</p>
+                                      
                                     </div>
                                 </div>
                             </div>
@@ -367,7 +319,7 @@
                         <div class="row">
                             <div class="col l4 s4">
                                 <p>OBSERVACIONES</p>
-				<%= se.text_area :observations,{:cols => "30",:rows => "10"}%>
+				<%= f.text_area :observations,{:cols => "30",:rows => "10"}%>
                                 
                             </div>
                             <div class="col l4 s4">
@@ -377,7 +329,10 @@
                                 </div>
                             </div>
                             <div class="col l4 s4 done-button">
-                                <a href="cart.html" class="btn">SUBIR A CARRITO</a>
+                                <%= f.button :class=>'btn' do %>
+                                    SUBIR A CARRITO
+                                <%end%>
+                                
                             </div>
                         </div>
                     </div>

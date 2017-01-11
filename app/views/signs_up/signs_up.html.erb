@@ -46,23 +46,23 @@
 
 				<%= f.text_field :name, :placeholder => "Nombre", :id => "nombre" %>
 					<% for message_error in @client.errors[:name] %>
-						* <%= message_error %>
+						<a style="color:red;">* <%= message_error %></a>
 					<% end %>
 				<%= f.text_field :surname, :placeholder => "Apellidos", :id => "apellidos"%>
 					<% for message_error in @client.errors[:surname] %>
-					* <%= message_error %>
+					<a style="color:red;">* <%= message_error %></a>
 				<% end %>
 				<%= f.email_field :email, :placeholder => "Correo", :id => "correo-registro"%>
 					<% for message_error in @client.errors[:email] %>
-					* <%= message_error %>
+					<a style="color:red;">* <%= message_error %></a>
 				<% end %>
 				<%= f.text_field :address, :placeholder => "Dirección", :id => "direccion"%>
 					<% for message_error in @client.errors[:address] %>
-					* <%= message_error %>
+					<a style="color:red;">* <%= message_error %></a>
 				<% end %>
 				<%= f.password_field :password, :placeholder => "Contraseña", :id => "password-registro"%>
 					<% for message_error in @client.errors[:password] %>
-					* <%= message_error %>
+					<a style="color:red;">* <%= message_error %></a>
 				<% end %>
 				<br>
 				<%= f.button :Registrar, :type => "submit", :id => "button-register", :class => "btn center-align"%>

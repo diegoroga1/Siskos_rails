@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170105095821) do
+ActiveRecord::Schema.define(version: 20170111160653) do
 
   create_table "carts", force: :cascade do |t|
     t.decimal  "total_prize"
@@ -50,11 +50,15 @@ ActiveRecord::Schema.define(version: 20170105095821) do
   create_table "products", force: :cascade do |t|
     t.integer  "amount"
     t.decimal  "total_prize"
-    t.integer  "serigraphy_id"
     t.integer  "shirt_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["serigraphy_id"], name: "index_products_on_serigraphy_id"
+    t.integer  "number_of_colors"
+    t.text     "observations"
+    t.integer  "width"
+    t.integer  "heigth"
+    t.binary   "image"
+    t.string   "place"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.index ["shirt_id"], name: "index_products_on_shirt_id"
   end
 
@@ -63,24 +67,16 @@ ActiveRecord::Schema.define(version: 20170105095821) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "serigraphies", force: :cascade do |t|
-    t.string   "color"
-    t.integer  "number_of_colors"
-    t.text     "observations"
-    t.integer  "width"
-    t.integer  "heigth"
-    t.binary   "image"
-    t.string   "place"
-    t.decimal  "prize"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+  create_table "rename_type_to_shirt_type", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "shirts", force: :cascade do |t|
     t.string   "size"
-    t.integer  "stock"
+    t.string   "color"
     t.decimal  "prize"
-    t.string   "type"
+    t.string   "shirt_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

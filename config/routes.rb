@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 	get 'serigraphy' => 'serigraphies#home_serigraphy'
 	get 'promotions' => 'promotions#promotions'
 	get 'cart' => 'carts#cart'
+	post 'serigraphy' => 'serigraphies#upload_to_cart'
 	root 'index#index'
 end

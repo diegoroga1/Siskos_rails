@@ -70,3 +70,5 @@ calculateTotalCart();
 $('#cart-products input').on('change',function () {
     calculateTotalCart();
 })
+
+

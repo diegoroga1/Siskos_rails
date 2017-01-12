@@ -9,7 +9,12 @@ Rails.application.config.assets.precompile += %w( style_serigraphy.css )
 Rails.application.config.assets.precompile += %w( style_promotions.css )
 Rails.application.config.assets.precompile += %w( signs_up.css )
 Rails.application.config.assets.precompile += %w( logins.css )
-
+Rails.application.config.assets.precompile += %w( signs_up.js )
+Rails.application.config.assets.precompile += %w( jquery.min.js )
+Rails.application.config.assets.precompile += %w( jquery-ui.min.js )
+Rails.application.config.assets.precompile += %w( jquery-ui.js )
+Rails.application.config.assets.precompile += %w( jquery.js )
+Rails.application.config.assets.precompile += %w( turbolinks.js )
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 

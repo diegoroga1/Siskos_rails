@@ -44,7 +44,7 @@
 		<ul id="dropdown1" >
 			<%= form_for(:client, :url => {:controller => 'signs_up', :action => 'create'}) do |f| %>
 
-				<%= f.text_field :name, :placeholder => "Nombre", :id => "nombre" %>
+				<%= f.text_field :name, :placeholder => "Nombre", :id => "nombre"%>
 					<% for message_error in @client.errors[:name] %>
 						<a style="color:red;">* <%= message_error %></a>
 					<% end %>
@@ -60,7 +60,7 @@
 					<% for message_error in @client.errors[:address] %>
 					<a style="color:red;">* <%= message_error %></a>
 				<% end %>
-				<%= f.password_field :password, :placeholder => "Contraseña", :id => "password-registro"%>
+				<%= f.password_field :password, :placeholder => "Contraseña", :id => "password-registro",:title => "Formato de la contraseña: mínimo 6 caracteres"%>
 					<% for message_error in @client.errors[:password] %>
 					<a style="color:red;">* <%= message_error %></a>
 				<% end %>
@@ -77,9 +77,14 @@
 			<% end %>-->
 		</li>
 </section>
+
+
 <!--Footer-->
 <section>
 	<%= render "footer" %>
 </section>
+<script src="/assets/jquery.min.js"></script>
+<script type="text/javascript" src="assets/jquery-ui.min.js"></script>
+<script type="text/javascript" src="assets/script_signs_up.js"></script>
 
 <!--Fin footer-->

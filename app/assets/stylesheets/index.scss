@@ -94,6 +94,16 @@ nav{
     }
   }
 }
+.button_to{
+  min-width: 150px;height:36px;
+  button[type="submit"]{
+    background-color:transparent;
+    border:none;
+    &:hover{
+      background-color:white;
+    }
+  }
+}
 #dropdown3{
   margin-top: 40px;
   li {

@@ -37,3 +37,19 @@ $azulS:#04c5da;
     font-weight:100;
 
 }	
+ .ui-tooltip, .arrow:after {
+	background: white;
+	border: 2px solid white;
+	z-index:9999;
+	width:500px;
+
+}
+.ui-tooltip {
+	padding: 10px 20px;
+	color: #26A69A;
+	border-radius: 20px;
+	font: bold 14px "Helvetica Neue", Sans-Serif;
+	text-transform: uppercase;
+	box-shadow: 0 0 7px black;
+	left:500px;
+}

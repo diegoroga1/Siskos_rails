@@ -101,7 +101,7 @@ nav {
     border: 1px $serigraphy solid;
     border-radius: 0px !important;
     margin-bottom: 10px;
-
+    
     a{
       color: $serigraphy;
       width: 100%;
@@ -342,6 +342,16 @@ hr{
   margin-bottom: 0 !important;
 }
 
+.button_to{
+  min-width: 150px;height:36px;
+  button[type="submit"]{
+    background-color:white;
+    border:none;
+    &:hover{
+      background-color:white;
+    }
+  }
+}
 .done-button {
   .btn {
     @include bcolor($upload_file);

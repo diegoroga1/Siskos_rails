@@ -27,16 +27,13 @@
                 </div>
                 <div class="col l9 m9 s9">
                     <ul id="items-menu" class="right">
-                        <li class="waves-effect waves-yellow btn" style="min-width:180px; width: 20%; margin-left: 160px; !important;">
+                        <li class="waves-effect waves-yellow btn" style="min-width:180px; width: 40%; margin-left: 160px; !important;">
                             <div class="div-option">
 				<img class="icono-silueta" src="/assets/serigraphy/silueta.png"></div>
                             <p>Servicio</p>
                             <ul id="dropdown3">
-                                <li>
-					<%= link_to '/' do %>
-						<p>Principal</p>
-					<% end %>
-				</li>
+                                        
+                                <li><a href="/">Principal</a></li>
                                 <li><a>Sublimación</a></li>
                                 <li><a>Impr.Digital</a></li>
                                 <li><a>Tampografía</a></li>
@@ -64,13 +61,11 @@
 		
 		
 		<% else %>
-		<li  class="waves-effect waves-teal btn">
+		<li  class="waves-effect waves-teal btn" style="min-width: 180px;height:36px;">
                     	<div class="div-option"><img class="icono-silueta" src="/assets/serigraphy/silueta.png"></div>
          		<%= button_to :action => 'destroy', :controller => 'index' do %>                    	
-				<p>Cerrar </p><br>
-                    		<%flash.each do |name,msg| -%>
-					<%= content_tag :div,msg, class: name%>
-				<%end-%>
+				<p>CERRAR </p><br>
+		
 			<%end%>	
 		</li>	
 		<%end%>
@@ -375,6 +370,6 @@
 
 <script type="text/javascript" src="assets/jquery.min.js"></script>
 <script type="text/javascript" src="assets/materialize.min.js"></script>
-<script type="text/javascript" src="assets/script_serigraphy.js"></script>
+<script type="text/javascript" src="assets/script_serigraphies.js"></script>
 <script type="text/javascript" src="assets/fabric.js"></script>
 

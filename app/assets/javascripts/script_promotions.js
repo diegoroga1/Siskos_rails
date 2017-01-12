@@ -63,4 +63,3 @@ $(document).ready(function () {
         }).animate({opacity:'0'},500);
     });
 });
-

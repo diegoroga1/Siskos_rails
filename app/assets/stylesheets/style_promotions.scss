@@ -155,7 +155,16 @@ footer {
     }
   }
 }
-
+.button_to{
+  min-width: 150px;height:36px;
+  button[type="submit"]{
+    background-color:transparent;
+    border:none;
+    &:hover{
+      background-color:white;
+    }
+  }
+}
 #items-menu{
   position: absolute;
   right: 0;
@@ -212,4 +221,26 @@ footer {
       }
     }
   }
+}
+#dropdown3{
+  margin-top: 40px;
+  li {
+    float: left;
+    width: 100%;
+    border: 1px $azulS solid;
+    border-radius: 0px !important;
+    margin-bottom: 10px;
+
+    a{
+      color: $azulS;
+      width: 100%;
+      &:hover{
+        color:white;
+        @include bcolor($azulS);
+
+      }
+    }
+
+  }
+
 }

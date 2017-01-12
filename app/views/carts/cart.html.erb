@@ -51,15 +51,13 @@
 		
 		
 		<% else %>
-		<li  class="waves-effect waves-teal btn">
-                    	<div class="div-option"><img class="icono-silueta" src="/assets/index/silueta.png"></div>
-         		<%= button_to :action => 'destroy',:controller=>'index' do %>                    	
-				<p>Cerrar </p><br>
-                    		<%flash.each do |name,msg| -%>
-					<%= content_tag :div,msg, class: name%>
-				<%end-%>
-			<%end%>	
-		</li>	
+		<li  class="waves-effect waves-teal btn" style="min-width: 180px;height:36px;">
+                        <div class="div-option"><img class="icono-silueta" src="/assets/index/silueta.png"></div>
+                <%= button_to :action => 'destroy', :controller => 'index' do %>                        
+                <p>CERRAR </p><br>
+        
+            <%end%> 
+        </li>   
 		<%end%>
 
             </ul>

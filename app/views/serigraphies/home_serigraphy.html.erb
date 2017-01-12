@@ -1,4 +1,6 @@
 <!--Preloader -->
+
+
 <div class="preloader-background">
     <div class="preloader-wrapper big active">
         <div class="spinner-layer spinner-blue-only">
@@ -242,8 +244,9 @@
                                 <p class="location-text frente-with-line">FRENTE</p>
                                 <hr>
                                 <p>
-                                    <%= f.check_box :place,{:id => "frente"},"front"%>
+                                    <%= f.check_box :place,{:id => "frente",:checked =>true},"front"%>
                                     <label for="frente"></label>
+                                     
                                 </p>
                             </div>
 
@@ -275,7 +278,7 @@
                                         <p>
                                             
                                              <%= radio_button :product,:number_of_colors,:uno,:checked=>true,:class =>'with-gap'%>
-                                        <label for="shirt_number_of_colors_uno">1</label>
+                                        <label for="product_number_of_colors_uno">1</label>
                                         </p>
                                        
                                     </div>
@@ -283,28 +286,28 @@
                                         <p>
                                             
                                              <%= radio_button :product,:number_of_colors,:dos,:class =>'with-gap'%>
-                                        <label for="shirt_number_of_colors_dos">2</label>
+                                        <label for="product_number_of_colors_dos">2</label>
                                         </p>
                                        
                                     </div>
                                     <div class="col l2 s2">
                                         <p>
                                              <%= radio_button :product,:number_of_colors,:tres,:class =>'with-gap'%>
-                                        <label for="shirt_number_of_colors_tres">3</label>
+                                        <label for="product_number_of_colors_tres">3</label>
                                         </p>
                                         
                                     </div>
                                     <div class="col l2 s2">
                                         <p>
                                              <%= radio_button :product,:number_of_colors,:cuatro,:class =>'with-gap'%>
-                                        <label for="shirt_number_of_colors_cuatro">4</label>
+                                        <label for="product_number_of_colors_cuatro">4</label>
                                         </p>
                                         
                                     </div>
                                     <div class="col l2 s2">
                                         <p>
                                              <%= radio_button :product,:number_of_colors,:cinco,:class =>'with-gap'%>
-                                        <label for="shirt_number_of_colors_cinco">+ de 4</label>
+                                        <label for="product_number_of_colors_cinco">+ de 4</label>
                                         </p>
                                       
                                     </div>
@@ -321,6 +324,10 @@
                                 <div class="input-field">
                                     <%= f.text_field :amount,{:id => "cantidad",:class => "validate"}%>
                                     <label for="cantidad">CANTIDAD</label>
+                                    <% for message_error in @product.errors[:amount] %>
+                    <a style="color:red;">* <%= message_error %></a>
+                    <% end %>
+
                                 </div>
                             </div>
                             <div class="col l4 s4 done-button">

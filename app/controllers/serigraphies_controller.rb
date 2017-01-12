@@ -6,9 +6,13 @@ class SerigraphiesController < ApplicationController
 		@product=Product.new(product_params)
 		
 		@shirt=Shirt.find_by_id(find_id)
-		@product.shirt_id=@shirt.id
-		@product.total_prize=@shirt.prize*@product.amount
+		
+		if not @product.amount.nil?
 
+			@product.shirt_id=@shirt.id
+			@product.total_prize=@shirt.prize*@product.amount
+
+		end
 		if @product.save
 			redirect_to '/cart'
 			
